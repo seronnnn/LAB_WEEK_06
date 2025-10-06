@@ -39,29 +39,19 @@ class MainActivity : AppCompatActivity() {
 
         catAdapter.setData(
             listOf(
-                CatModel(
-                    Gender.Male,
-                    CatBreed.BalineseJavanese,
-                    "Fred",
-                    "Silent and deadly",
-                    "https://cdn2.thecatapi.com/images/7dj.jpg"
-                ),
-                CatModel(
-                    Gender.Female,
-                    CatBreed.ExoticShorthair,
-                    "Wilma",
-                    "Cuddly assassin",
-                    "https://cdn2.thecatapi.com/images/egv.jpg"
-                ),
-                CatModel(
-                    Gender.Unknown,
-                    CatBreed.AmericanCurl,
-                    "Curious George",
-                    "Award winning investigator",
-                    "https://cdn2.thecatapi.com/images/bar.jpg"
-                )
+                CatModel(Gender.Male, CatBreed.BalineseJavanese, "Fred", "Silent and deadly", "https://cdn2.thecatapi.com/images/7dj.jpg"),
+                CatModel(Gender.Female, CatBreed.ExoticShorthair, "Wilma", "Cuddly assassin", "https://cdn2.thecatapi.com/images/egv.jpg"),
+                CatModel(Gender.Unknown, CatBreed.AmericanCurl, "Curious George", "Award winning investigator", "https://cdn2.thecatapi.com/images/bar.jpg"),
+                CatModel(Gender.Male, CatBreed.ExoticShorthair, "Tom", "Always chasing Jerry", "https://cdn2.thecatapi.com/images/c9f.jpg"),
+                CatModel(Gender.Female, CatBreed.BalineseJavanese, "Luna", "Loves moonlight naps", "https://cdn2.thecatapi.com/images/8sd.jpg"),
+                CatModel(Gender.Male, CatBreed.AmericanCurl, "Max", "Cool and calm", "https://cdn2.thecatapi.com/images/bpc.jpg"),
+                CatModel(Gender.Female, CatBreed.ExoticShorthair, "Chloe", "Elegant and quiet", "https://cdn2.thecatapi.com/images/d8n.jpg"),
+                CatModel(Gender.Unknown, CatBreed.BalineseJavanese, "Shadow", "Mysterious presence", "https://cdn2.thecatapi.com/images/ae3.jpg"),
+                CatModel(Gender.Male, CatBreed.ExoticShorthair, "Leo", "King of the house", "https://cdn2.thecatapi.com/images/5ln.jpg"),
+                CatModel(Gender.Female, CatBreed.AmericanCurl, "Misty", "Soft and sweet", "https://cdn2.thecatapi.com/images/9g3.jpg")
             )
         )
+
     }
 
     private fun showSelectionDialog(cat: CatModel) {
