@@ -2,10 +2,10 @@ package com.example.lab_week_06
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-
 import com.example.lab_week_06.GlideImageLoader
 import com.example.lab_week_06.CatAdapter
 import com.example.lab_week_06.model.CatModel
@@ -23,7 +23,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         recyclerView = findViewById(R.id.recycler_view)
-        catAdapter = CatAdapter(layoutInflater, GlideImageLoader(this))
+        catAdapter = CatAdapter(layoutInflater, GlideImageLoader(this), object :
+            CatViewHolder.OnClickListener {
+            override fun onClick(cat: CatModel) = showSelectionDialog(cat)
+        })
+
 
         recyclerView.adapter = catAdapter
         recyclerView.layoutManager = LinearLayoutManager(
@@ -57,5 +61,13 @@ class MainActivity : AppCompatActivity() {
                 )
             )
         )
+    }
+
+    private fun showSelectionDialog(cat: CatModel) {
+        AlertDialog.Builder(this)
+            .setTitle("Cat Selected")
+            .setMessage("You have selected cat ${cat.name}")
+            .setPositiveButton("OK", null)
+            .show()
     }
 }
